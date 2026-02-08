@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Chocolate Day 🍫</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Poppins, Arial;
+  background: linear-gradient(135deg, #3e1f0d, #1b0c05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.card, .surprise {
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  background: #b35a00;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.choco {
+  width: 180px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1>Happy Chocolate Day 🍫</h1>
+  <p>Click to open your chocolate 😋</p>
+  <button id="openBtn">Open Chocolate 🍫</button>
+</div>
+
+<div class="surprise hidden" id="surprise">
+  <img class="choco" src="https://i.imgur.com/7kCeT7D.png">
+  <h2>For You 💝</h2>
+  <p>
+    Just like chocolate,<br>
+    you make my days sweeter ❤️
+  </p>
+</div>
+
+<script>
+document.getElementById("openBtn").addEventListener("click", function () {
+  document.getElementById("card").classList.add("hidden");
+  document.getElementById("surprise").classList.remove("hidden");
+});
+</script>
+
+</body>
+</html>
