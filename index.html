@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Chocolate Day 🍫</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', Arial;
+  background: radial-gradient(circle at top, #4b220f, #140801);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Card */
+.card {
+  background: rgba(255,255,255,0.12);
+  padding: 26px;
+  border-radius: 20px;
+  text-align: center;
+  width: 280px;
+  animation: reelIn 0.8s ease;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  background: #c46a1c;
+  color: white;
+}
+
+/* Hidden */
+.hidden { display: none; }
+
+/* Chocolate Image */
+.choco-img {
+  width: 200px;
+  border-radius: 15px;
+  animation: openBox 1s ease;
+}
+
+/* Heart */
+.heart {
+  font-size: 40px;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+/* Message */
+.message {
+  margin-top: 10px;
+  font-size: 15px;
+  display: none;
+  animation: fadeIn 0.8s forwards;
+}
+
+/* Animations */
+@keyframes reelIn {
+  from { opacity:0; transform: scale(0.9) translateY(40px); }
+  to { opacity:1; transform: scale(1) translateY(0); }
+}
+
+@keyframes openBox {
+  from { transform: scale(0.7); opacity:0; }
+  to { transform: scale(1); opacity:1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STEP 1 -->
+<div class="card" id="step1">
+  <h2>Happy Chocolate Day 🍫</h2>
+  <p>Click to open your chocolate 😋</p>
+  <button onclick="openChocolate()">Open Chocolate 🍫</button>
+</div>
+
+<!-- STEP 2 -->
+<div class="card hidden" id="step2">
+  <img src="chocolate.jpg" class="choco-img">
+  <h3>For <span id="name"></span> 💌</h3>
+  <p>Tap the heart ❤️</p>
+
+  <div class="heart" onclick="showMessage()">❤️</div>
+
+  <div class="message" id="msg">
+    Just like chocolate,<br>
+    you make my world sweeter 🍫💖
+  </div>
+</div>
+
+<script>
+/* ✨ CHANGE NAME HERE */
+const girlName = "Tannu";
+
+function openChocolate() {
+  document.getElementById("step1").classList.add("hidden");
+  document.getElementById("step2").classList.remove("hidden");
+  document.getElementById("name").innerText = girlName;
+}
+
+function showMessage() {
+  document.getElementById("msg").style.display = "block";
+}
+</script>
+
+</body>
+</html>
